@@ -25,7 +25,7 @@ public struct DeviceCodeRequest: AuthTargetType {
 }
 
 public struct DeviceCodeResponse: Codable {
-    enum CodingKeys: String, CodingKey {
+    public enum CodingKeys: String, CodingKey {
         case code
         case userCode = "user_code"
         case verificationURI = "verification_uri"

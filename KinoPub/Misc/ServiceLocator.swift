@@ -10,10 +10,13 @@ import Foundation
 import Combine
 
 public final class ServiceLocator {
-    static let shared = ServiceLocator()
-    
-    var keyChainStorage: KeyValueStorage {
+    public static let shared = ServiceLocator()
+
+    public var keyChainStorage: KeyValueStorage {
         return KeyChainStorage()
     }
-    
+
+    public var fileStorage: KeyValueStorage {
+        return FileStorageFactory().lazyKeyValueStorage
+    }
 }

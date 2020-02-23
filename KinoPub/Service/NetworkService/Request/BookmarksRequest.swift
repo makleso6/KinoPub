@@ -8,14 +8,14 @@
 
 import Moya
 
-struct BookmarksRequest: ApiTargetType {
-    var serializer: DecodableResponseSerializer<BookmarksResponse> { .init() }
-    var path: String { "bookmarks" }
-    var method: Moya.Method { .get }
-    var task: Moya.Task { .requestPlain }
+public struct BookmarksRequest: ApiTargetType {
+    public var serializer: DecodableResponseSerializer<BookmarksResponse> { .init() }
+    public var path: String { "bookmarks" }
+    public var method: Moya.Method { .get }
+    public var task: Moya.Task { .requestPlain }
 }
 
-struct BookmarksResponse: Codable {
-    let status: Int
-    let items: [Bookmark]
+public struct BookmarksResponse: Codable {
+    public let status: Int
+    public let items: [Bookmark]
 }

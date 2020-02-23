@@ -19,5 +19,5 @@ public protocol NetworkService: AnyObject {
 }
 
 public protocol CombineNetworkService: NetworkService {
-    func execute<R>(_ request: R) -> AnyPublisher<R.ResponseSerializerType.EntityType, Error>  where R: DecodingTargetType
+    func execute<R>(_ request: R) -> AnyPublisher<R.ResponseSerializerType.EntityType, Error> where R: DecodingTargetType
 }

@@ -7,10 +7,11 @@
 //
 
 import Moya
+import Foundation
 
 public struct TokenPlugin: PluginType {
 
-    let accessTokenService: AccessTokenService
+    private let accessTokenService: AccessTokenService
     public init(accessTokenService: AccessTokenService) {
         self.accessTokenService = accessTokenService
     }

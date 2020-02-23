@@ -8,14 +8,13 @@
 
 import Foundation
 
-
-protocol KeyRepresentable {
+public protocol KeyRepresentable {
     var rawValue: String { get }
 }
 
 public struct Key<Value>: KeyRepresentable {
-    let rawValue: String
-    init(rawValue: String) {
+    public let rawValue: String
+    public init(rawValue: String) {
         self.rawValue = rawValue
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import Moya
+import Foundation
 
 public protocol ApiTargetType: DecodingTargetType { }
 
@@ -14,11 +15,11 @@ extension ApiTargetType {
     public var url: URL? {
         URL(string: "https://api.service-kp.com/v1")
     }
-    
+
     public var authorizationType: AuthorizationType? {
         .bearer
     }
-    
+
     public var validationType: Moya.ValidationType {
         .successCodes
     }

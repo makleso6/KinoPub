@@ -9,7 +9,6 @@
 import Foundation
 
 public enum Secret {
-    static var clientId: String { "xbmc" }
-    static var clientSecret: String { "cgg3gtifu46urtfp2zp1nqtba0k2ezxh" }
+    public static var clientId: String { "xbmc" }
+    public static var clientSecret: String { "cgg3gtifu46urtfp2zp1nqtba0k2ezxh" }
 }
-

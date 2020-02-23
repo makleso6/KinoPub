@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,16 +16,65 @@
 		8C1C684723FAF4950094E7F5 /* DataResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1C684623FAF4950094E7F5 /* DataResponseSerializer.swift */; };
 		8C1C684923FAF5D00094E7F5 /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1C684823FAF5D00094E7F5 /* AuthorizationView.swift */; };
 		8C49E7E7240060C3009FD161 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C49E7E6240060C3009FD161 /* ColorExtension.swift */; };
+		8C5890B224166C0000CA80DF /* DownloadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5890B124166C0000CA80DF /* DownloadButton.swift */; };
+		8C5890B424166FB600CA80DF /* EpisodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5890B324166FB600CA80DF /* EpisodeViewModel.swift */; };
 		8C61026923FB382B000BEFD9 /* KeyValueStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C61026823FB382B000BEFD9 /* KeyValueStorage.swift */; };
 		8C61026B23FB3854000BEFD9 /* KeyChainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C61026A23FB3854000BEFD9 /* KeyChainStorage.swift */; };
 		8C61027123FBECDD000BEFD9 /* DecodableResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C61027023FBECDD000BEFD9 /* DecodableResponseSerializer.swift */; };
 		8C61027323FBED84000BEFD9 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C61027223FBED84000BEFD9 /* Secret.swift */; };
-		8CD46CF92400891D006DB466 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD46CF82400891D006DB466 /* MainView.swift */; };
-		8CD46CFB2400A01D006DB466 /* BookmarksView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD46CFA2400A01D006DB466 /* BookmarksView2.swift */; };
+		8C6A773B24158FD900056826 /* VLCPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A773A24158FD900056826 /* VLCPlayerViewController.swift */; };
+		8C7A5456241041620030339C /* DownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7A5455241041620030339C /* DownloadService.swift */; };
+		8C859CC12408789000E33DE5 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C859CC02408789000E33DE5 /* UITableViewExtension.swift */; };
+		8C899A682412E08200D94A0E /* CachableNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C899A672412E08200D94A0E /* CachableNetworkService.swift */; };
+		8C899A6A2412E20E00D94A0E /* CacheableRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C899A692412E20E00D94A0E /* CacheableRequest.swift */; };
+		8C899A6C2412E22D00D94A0E /* CacheableTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C899A6B2412E22D00D94A0E /* CacheableTargetType.swift */; };
+		8C899A6E2412E48900D94A0E /* CachableNetworkServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C899A6D2412E48900D94A0E /* CachableNetworkServiceFactory.swift */; };
+		8C899A802412EDE700D94A0E /* MemoryStorageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C899A7F2412EDE700D94A0E /* MemoryStorageExtension.swift */; };
+		8C899A872412EE1500D94A0E /* BookmarksFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C899A812412EE1500D94A0E /* BookmarksFactory.swift */; };
+		8C899A882412EE1500D94A0E /* BookmarksModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C899A822412EE1500D94A0E /* BookmarksModule.swift */; };
+		8C899A892412EE1500D94A0E /* BookmarksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C899A832412EE1500D94A0E /* BookmarksPresenter.swift */; };
+		8C899A8A2412EE1500D94A0E /* BookmarksRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C899A842412EE1500D94A0E /* BookmarksRouter.swift */; };
+		8C899A8B2412EE1500D94A0E /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C899A852412EE1500D94A0E /* BookmarksViewController.swift */; };
+		8C899A8C2412EE1500D94A0E /* BookmarksInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C899A862412EE1500D94A0E /* BookmarksInteractor.swift */; };
+		8C899A8E2412F69400D94A0E /* BookmarkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C899A8D2412F69400D94A0E /* BookmarkRequest.swift */; };
+		8C899A952412F6E900D94A0E /* BookmarkFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C899A8F2412F6E900D94A0E /* BookmarkFactory.swift */; };
+		8C899A962412F6E900D94A0E /* BookmarkModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C899A902412F6E900D94A0E /* BookmarkModule.swift */; };
+		8C899A972412F6E900D94A0E /* BookmarkPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C899A912412F6E900D94A0E /* BookmarkPresenter.swift */; };
+		8C899A982412F6E900D94A0E /* BookmarkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C899A922412F6E900D94A0E /* BookmarkRouter.swift */; };
+		8C899A992412F6E900D94A0E /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C899A932412F6E900D94A0E /* BookmarkViewController.swift */; };
+		8C899A9A2412F6E900D94A0E /* BookmarkInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C899A942412F6E900D94A0E /* BookmarkInteractor.swift */; };
+		8C899A9D2412F97000D94A0E /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C899A9C2412F97000D94A0E /* Transition.swift */; };
+		8C899AA62412FCF000D94A0E /* ItemModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C899AA02412FCF000D94A0E /* ItemModule.swift */; };
+		8C899AA72412FCF000D94A0E /* ItemPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C899AA12412FCF000D94A0E /* ItemPresenter.swift */; };
+		8C899AA82412FCF000D94A0E /* ItemRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C899AA22412FCF000D94A0E /* ItemRouter.swift */; };
+		8C899AAC2412FF3D00D94A0E /* ItemRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C899AAB2412FF3D00D94A0E /* ItemRequest.swift */; };
+		8C899AAD2413006300D94A0E /* ItemInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C899AA42412FCF000D94A0E /* ItemInteractor.swift */; };
+		8C899AAF2413018100D94A0E /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C899AAE2413018100D94A0E /* ItemViewController.swift */; };
+		8C899AB1241301D500D94A0E /* ItemFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C899AB0241301D500D94A0E /* ItemFactory.swift */; };
+		8C899AB92413024C00D94A0E /* SeasonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C899AB32413024C00D94A0E /* SeasonFactory.swift */; };
+		8C899ABA2413024C00D94A0E /* SeasonModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C899AB42413024C00D94A0E /* SeasonModule.swift */; };
+		8C899ABB2413024C00D94A0E /* SeasonPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C899AB52413024C00D94A0E /* SeasonPresenter.swift */; };
+		8C899ABC2413024C00D94A0E /* SeasonRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C899AB62413024C00D94A0E /* SeasonRouter.swift */; };
+		8C899ABD2413024C00D94A0E /* SeasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C899AB72413024C00D94A0E /* SeasonViewController.swift */; };
+		8C899ABE2413024C00D94A0E /* SeasonInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C899AB82413024C00D94A0E /* SeasonInteractor.swift */; };
+		8C9B6C4D241282BF00ECDB84 /* AlamofireDownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9B6C4C241282BF00ECDB84 /* AlamofireDownloadService.swift */; };
+		8C9B6C4F2412834600ECDB84 /* AlamofireDownloadServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9B6C4E2412834600ECDB84 /* AlamofireDownloadServiceFactory.swift */; };
+		8C9B6C512412835700ECDB84 /* DownloadServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9B6C502412835700ECDB84 /* DownloadServiceFactory.swift */; };
+		8C9B6C6024128A3F00ECDB84 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD46D352401C3E7006DB466 /* AccessToken.swift */; };
+		8C9B6C6224128AA400ECDB84 /* RefreshTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9B6C6124128AA400ECDB84 /* RefreshTokenRequest.swift */; };
+		8CA917392411479E008959C0 /* KeyChainStorageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA917382411479E008959C0 /* KeyChainStorageFactory.swift */; };
+		8CA9173B241147AB008959C0 /* KeyValueStorageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA9173A241147AB008959C0 /* KeyValueStorageFactory.swift */; };
+		8CA9173E241149A5008959C0 /* FileStorageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA9173D241149A5008959C0 /* FileStorageFactory.swift */; };
+		8CB083622422800C003FD474 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 8CB083612422800C003FD474 /* Moya */; };
+		8CB083652422804B003FD474 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 8CB083642422804B003FD474 /* KeychainAccess */; };
+		8CB083682422806C003FD474 /* Files in Frameworks */ = {isa = PBXBuildFile; productRef = 8CB083672422806C003FD474 /* Files */; };
+		8CB0836B2422807F003FD474 /* AnyCodable in Frameworks */ = {isa = PBXBuildFile; productRef = 8CB0836A2422807F003FD474 /* AnyCodable */; };
+		8CB0836E2422809D003FD474 /* DTTableViewManager in Frameworks */ = {isa = PBXBuildFile; productRef = 8CB0836D2422809D003FD474 /* DTTableViewManager */; };
+		8CB0837124228258003FD474 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8CB0837024228258003FD474 /* Alamofire */; };
+		8CB083972422879D003FD474 /* AHDownloadButton in Frameworks */ = {isa = PBXBuildFile; productRef = 8CB083962422879D003FD474 /* AHDownloadButton */; };
+		8CB0F687241BCE180025C066 /* AnyReqest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB0F686241BCE180025C066 /* AnyReqest.swift */; };
+		8CB0F689241BCE560025C066 /* EmptyResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB0F688241BCE560025C066 /* EmptyResponseSerializer.swift */; };
 		8CD46CFF240168F5006DB466 /* GeneratedModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD46CFE240168F5006DB466 /* GeneratedModels.swift */; };
-		8CD46D012401802F006DB466 /* BookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD46D002401802F006DB466 /* BookmarkView.swift */; };
-		8CD46D03240188F2006DB466 /* VideoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD46D02240188F2006DB466 /* VideoItemView.swift */; };
-		8CD46D0524019092006DB466 /* SeasonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD46D0424019092006DB466 /* SeasonView.swift */; };
 		8CD46D082401AB0F006DB466 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD46D072401AB0F006DB466 /* AuthorizationViewController.swift */; };
 		8CD46D0A2401BA08006DB466 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD46D092401BA08006DB466 /* ServiceLocator.swift */; };
 		8CD46D0C2401BA5A006DB466 /* NetworkServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD46D0B2401BA5A006DB466 /* NetworkServiceFactory.swift */; };
@@ -43,26 +92,19 @@
 		8CD46D262401BF01006DB466 /* ApiTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD46D252401BF01006DB466 /* ApiTargetType.swift */; };
 		8CD46D282401BFC3006DB466 /* AuthTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD46D272401BFC3006DB466 /* AuthTargetType.swift */; };
 		8CD46D342401C3B1006DB466 /* DeviceTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD46D332401C3B1006DB466 /* DeviceTokenRequest.swift */; };
-		8CD46D362401C3E7006DB466 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD46D352401C3E7006DB466 /* AccessToken.swift */; };
 		8CD46D382401C4FB006DB466 /* DeviceCodeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD46D372401C4FB006DB466 /* DeviceCodeRequest.swift */; };
-		8CD46D3D2401C65E006DB466 /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD46D3C2401C65E006DB466 /* BookmarksView.swift */; };
 		8CD46D3F2401C689006DB466 /* BookmarksRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD46D3E2401C689006DB466 /* BookmarksRequest.swift */; };
-		8CD46D412401C71A006DB466 /* BookmarksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD46D402401C71A006DB466 /* BookmarksViewModel.swift */; };
 		8CD46D442401C730006DB466 /* TokenPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD46D432401C730006DB466 /* TokenPlugin.swift */; };
-		8CD46D462401C7ED006DB466 /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD46D452401C7ED006DB466 /* BookmarksViewController.swift */; };
-		8CD46D482401C8F7006DB466 /* BookmarksModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD46D472401C8F7006DB466 /* BookmarksModuleFactory.swift */; };
 		8CE898C823F53935006531BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE898C723F53935006531BC /* AppDelegate.swift */; };
 		8CE898CA23F53935006531BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE898C923F53935006531BC /* SceneDelegate.swift */; };
-		8CE898CC23F53935006531BC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE898CB23F53935006531BC /* ContentView.swift */; };
 		8CE898CE23F53936006531BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CE898CD23F53936006531BC /* Assets.xcassets */; };
 		8CE898D123F53936006531BC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CE898D023F53936006531BC /* Preview Assets.xcassets */; };
 		8CE898D423F53936006531BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CE898D223F53936006531BC /* LaunchScreen.storyboard */; };
-		E93F101049289BA1403D530C /* Pods_KinoPub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A3700DEC066E6E8CA74602 /* Pods_KinoPub.framework */; };
+		8CEBED3E240EB38700B6E405 /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEBED3D240EB38700B6E405 /* FileStorage.swift */; };
+		8CFFA73A241A362700A3733D /* Publisher+Bind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFFA739241A362700A3733D /* Publisher+Bind.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		52FDA6DD36BAFBD6EF993897 /* Pods-KinoPub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KinoPub.debug.xcconfig"; path = "Target Support Files/Pods-KinoPub/Pods-KinoPub.debug.xcconfig"; sourceTree = "<group>"; };
-		63A3700DEC066E6E8CA74602 /* Pods_KinoPub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KinoPub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C1C683923FAE3C30094E7F5 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		8C1C683C23FAE4240094E7F5 /* NetworkRequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestType.swift; sourceTree = "<group>"; };
 		8C1C683E23FAE4460094E7F5 /* ResponseSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseSerializer.swift; sourceTree = "<group>"; };
@@ -72,16 +114,58 @@
 		8C1C684623FAF4950094E7F5 /* DataResponseSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResponseSerializer.swift; sourceTree = "<group>"; };
 		8C1C684823FAF5D00094E7F5 /* AuthorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationView.swift; sourceTree = "<group>"; };
 		8C49E7E6240060C3009FD161 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		8C5890B124166C0000CA80DF /* DownloadButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadButton.swift; sourceTree = "<group>"; };
+		8C5890B324166FB600CA80DF /* EpisodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewModel.swift; sourceTree = "<group>"; };
 		8C61026823FB382B000BEFD9 /* KeyValueStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueStorage.swift; sourceTree = "<group>"; };
 		8C61026A23FB3854000BEFD9 /* KeyChainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainStorage.swift; sourceTree = "<group>"; };
 		8C61027023FBECDD000BEFD9 /* DecodableResponseSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableResponseSerializer.swift; sourceTree = "<group>"; };
 		8C61027223FBED84000BEFD9 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
-		8CD46CF82400891D006DB466 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		8CD46CFA2400A01D006DB466 /* BookmarksView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView2.swift; sourceTree = "<group>"; };
+		8C6A77382415075F00056826 /* KinoPub-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KinoPub-Bridging-Header.h"; sourceTree = "<group>"; };
+		8C6A773A24158FD900056826 /* VLCPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLCPlayerViewController.swift; sourceTree = "<group>"; };
+		8C7A5455241041620030339C /* DownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadService.swift; sourceTree = "<group>"; };
+		8C859CC02408789000E33DE5 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		8C899A672412E08200D94A0E /* CachableNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachableNetworkService.swift; sourceTree = "<group>"; };
+		8C899A692412E20E00D94A0E /* CacheableRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheableRequest.swift; sourceTree = "<group>"; };
+		8C899A6B2412E22D00D94A0E /* CacheableTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheableTargetType.swift; sourceTree = "<group>"; };
+		8C899A6D2412E48900D94A0E /* CachableNetworkServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachableNetworkServiceFactory.swift; sourceTree = "<group>"; };
+		8C899A7F2412EDE700D94A0E /* MemoryStorageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryStorageExtension.swift; sourceTree = "<group>"; };
+		8C899A812412EE1500D94A0E /* BookmarksFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksFactory.swift; sourceTree = "<group>"; };
+		8C899A822412EE1500D94A0E /* BookmarksModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksModule.swift; sourceTree = "<group>"; };
+		8C899A832412EE1500D94A0E /* BookmarksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksPresenter.swift; sourceTree = "<group>"; };
+		8C899A842412EE1500D94A0E /* BookmarksRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksRouter.swift; sourceTree = "<group>"; };
+		8C899A852412EE1500D94A0E /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
+		8C899A862412EE1500D94A0E /* BookmarksInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksInteractor.swift; sourceTree = "<group>"; };
+		8C899A8D2412F69400D94A0E /* BookmarkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkRequest.swift; sourceTree = "<group>"; };
+		8C899A8F2412F6E900D94A0E /* BookmarkFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkFactory.swift; sourceTree = "<group>"; };
+		8C899A902412F6E900D94A0E /* BookmarkModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkModule.swift; sourceTree = "<group>"; };
+		8C899A912412F6E900D94A0E /* BookmarkPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkPresenter.swift; sourceTree = "<group>"; };
+		8C899A922412F6E900D94A0E /* BookmarkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkRouter.swift; sourceTree = "<group>"; };
+		8C899A932412F6E900D94A0E /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
+		8C899A942412F6E900D94A0E /* BookmarkInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkInteractor.swift; sourceTree = "<group>"; };
+		8C899A9C2412F97000D94A0E /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
+		8C899AA02412FCF000D94A0E /* ItemModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModule.swift; sourceTree = "<group>"; };
+		8C899AA12412FCF000D94A0E /* ItemPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPresenter.swift; sourceTree = "<group>"; };
+		8C899AA22412FCF000D94A0E /* ItemRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRouter.swift; sourceTree = "<group>"; };
+		8C899AA42412FCF000D94A0E /* ItemInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInteractor.swift; sourceTree = "<group>"; };
+		8C899AAB2412FF3D00D94A0E /* ItemRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRequest.swift; sourceTree = "<group>"; };
+		8C899AAE2413018100D94A0E /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		8C899AB0241301D500D94A0E /* ItemFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemFactory.swift; sourceTree = "<group>"; };
+		8C899AB32413024C00D94A0E /* SeasonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonFactory.swift; sourceTree = "<group>"; };
+		8C899AB42413024C00D94A0E /* SeasonModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonModule.swift; sourceTree = "<group>"; };
+		8C899AB52413024C00D94A0E /* SeasonPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonPresenter.swift; sourceTree = "<group>"; };
+		8C899AB62413024C00D94A0E /* SeasonRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonRouter.swift; sourceTree = "<group>"; };
+		8C899AB72413024C00D94A0E /* SeasonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonViewController.swift; sourceTree = "<group>"; };
+		8C899AB82413024C00D94A0E /* SeasonInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonInteractor.swift; sourceTree = "<group>"; };
+		8C9B6C4C241282BF00ECDB84 /* AlamofireDownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireDownloadService.swift; sourceTree = "<group>"; };
+		8C9B6C4E2412834600ECDB84 /* AlamofireDownloadServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireDownloadServiceFactory.swift; sourceTree = "<group>"; };
+		8C9B6C502412835700ECDB84 /* DownloadServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadServiceFactory.swift; sourceTree = "<group>"; };
+		8C9B6C6124128AA400ECDB84 /* RefreshTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenRequest.swift; sourceTree = "<group>"; };
+		8CA917382411479E008959C0 /* KeyChainStorageFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainStorageFactory.swift; sourceTree = "<group>"; };
+		8CA9173A241147AB008959C0 /* KeyValueStorageFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueStorageFactory.swift; sourceTree = "<group>"; };
+		8CA9173D241149A5008959C0 /* FileStorageFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorageFactory.swift; sourceTree = "<group>"; };
+		8CB0F686241BCE180025C066 /* AnyReqest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyReqest.swift; sourceTree = "<group>"; };
+		8CB0F688241BCE560025C066 /* EmptyResponseSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResponseSerializer.swift; sourceTree = "<group>"; };
 		8CD46CFE240168F5006DB466 /* GeneratedModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedModels.swift; sourceTree = "<group>"; };
-		8CD46D002401802F006DB466 /* BookmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkView.swift; sourceTree = "<group>"; };
-		8CD46D02240188F2006DB466 /* VideoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoItemView.swift; sourceTree = "<group>"; };
-		8CD46D0424019092006DB466 /* SeasonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonView.swift; sourceTree = "<group>"; };
 		8CD46D072401AB0F006DB466 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		8CD46D092401BA08006DB466 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		8CD46D0B2401BA5A006DB466 /* NetworkServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceFactory.swift; sourceTree = "<group>"; };
@@ -101,21 +185,17 @@
 		8CD46D332401C3B1006DB466 /* DeviceTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTokenRequest.swift; sourceTree = "<group>"; };
 		8CD46D352401C3E7006DB466 /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		8CD46D372401C4FB006DB466 /* DeviceCodeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCodeRequest.swift; sourceTree = "<group>"; };
-		8CD46D3C2401C65E006DB466 /* BookmarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
 		8CD46D3E2401C689006DB466 /* BookmarksRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksRequest.swift; sourceTree = "<group>"; };
-		8CD46D402401C71A006DB466 /* BookmarksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewModel.swift; sourceTree = "<group>"; };
 		8CD46D432401C730006DB466 /* TokenPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenPlugin.swift; sourceTree = "<group>"; };
-		8CD46D452401C7ED006DB466 /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
-		8CD46D472401C8F7006DB466 /* BookmarksModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksModuleFactory.swift; sourceTree = "<group>"; };
 		8CE898C423F53935006531BC /* KinoPub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KinoPub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CE898C723F53935006531BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CE898C923F53935006531BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8CE898CB23F53935006531BC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8CE898CD23F53936006531BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CE898D023F53936006531BC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8CE898D323F53936006531BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8CE898D523F53936006531BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AE5AF6F19A7D54C55D664735 /* Pods-KinoPub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KinoPub.release.xcconfig"; path = "Target Support Files/Pods-KinoPub/Pods-KinoPub.release.xcconfig"; sourceTree = "<group>"; };
+		8CEBED3D240EB38700B6E405 /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
+		8CFFA739241A362700A3733D /* Publisher+Bind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Bind.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,40 +203,51 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E93F101049289BA1403D530C /* Pods_KinoPub.framework in Frameworks */,
+				8CB083682422806C003FD474 /* Files in Frameworks */,
+				8CB0837124228258003FD474 /* Alamofire in Frameworks */,
+				8CB083622422800C003FD474 /* Moya in Frameworks */,
+				8CB083652422804B003FD474 /* KeychainAccess in Frameworks */,
+				8CB0836E2422809D003FD474 /* DTTableViewManager in Frameworks */,
+				8CB083972422879D003FD474 /* AHDownloadButton in Frameworks */,
+				8CB0836B2422807F003FD474 /* AnyCodable in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5818C0929FF1849DE465BB0E /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				63A3700DEC066E6E8CA74602 /* Pods_KinoPub.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		88E740D73FEF13E0254F669D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				52FDA6DD36BAFBD6EF993897 /* Pods-KinoPub.debug.xcconfig */,
-				AE5AF6F19A7D54C55D664735 /* Pods-KinoPub.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		8C1897BA240299300023DE3D /* Bookmark */ = {
+			isa = PBXGroup;
+			children = (
+				8C899A8F2412F6E900D94A0E /* BookmarkFactory.swift */,
+				8C899A902412F6E900D94A0E /* BookmarkModule.swift */,
+				8C899A912412F6E900D94A0E /* BookmarkPresenter.swift */,
+				8C899A922412F6E900D94A0E /* BookmarkRouter.swift */,
+				8C899A932412F6E900D94A0E /* BookmarkViewController.swift */,
+				8C899A942412F6E900D94A0E /* BookmarkInteractor.swift */,
+			);
+			path = Bookmark;
 			sourceTree = "<group>";
 		};
 		8C1C683823FAE3B20094E7F5 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
+				8CD46D0B2401BA5A006DB466 /* NetworkServiceFactory.swift */,
+				8C1C683923FAE3C30094E7F5 /* NetworkService.swift */,
+				8C899A662412E07A00D94A0E /* CachableNetworkService */,
+				8C9B6C5D241289D000ECDB84 /* MoyaNetworkService */,
 				8CD46D422401C729006DB466 /* PluginType */,
 				8CD46D322401C3A7006DB466 /* Request */,
 				8CD46D2E2401C31A006DB466 /* Factory */,
 				8CD46D292401C197006DB466 /* ResponseSerializer */,
 				8C1C683B23FAE3FA0094E7F5 /* Target */,
-				8C1C683923FAE3C30094E7F5 /* NetworkService.swift */,
-				8C1C684423FAE48F0094E7F5 /* MoyaNetworkService.swift */,
 				8C1C684223FAE4760094E7F5 /* NetworkServiceError.swift */,
 			);
 			path = NetworkService;
@@ -169,8 +260,153 @@
 				8CD46D252401BF01006DB466 /* ApiTargetType.swift */,
 				8CD46D272401BFC3006DB466 /* AuthTargetType.swift */,
 				8C1C684023FAE4630094E7F5 /* DecodingTargetType.swift */,
+				8C899A6B2412E22D00D94A0E /* CacheableTargetType.swift */,
 			);
 			path = Target;
+			sourceTree = "<group>";
+		};
+		8C5890B024166BF200CA80DF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8C5890B124166C0000CA80DF /* DownloadButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8C6A773924158FC600056826 /* VLCPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				8C6A773A24158FD900056826 /* VLCPlayerViewController.swift */,
+			);
+			path = VLCPlayer;
+			sourceTree = "<group>";
+		};
+		8C7A54542410414D0030339C /* DownloadService */ = {
+			isa = PBXGroup;
+			children = (
+				8C7A5455241041620030339C /* DownloadService.swift */,
+				8C9B6C502412835700ECDB84 /* DownloadServiceFactory.swift */,
+				8C9B6C52241283AF00ECDB84 /* AlamofireDownloadService */,
+			);
+			path = DownloadService;
+			sourceTree = "<group>";
+		};
+		8C859CBF2408787700E33DE5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8C49E7E6240060C3009FD161 /* ColorExtension.swift */,
+				8CFFA739241A362700A3733D /* Publisher+Bind.swift */,
+				8C859CC02408789000E33DE5 /* UITableViewExtension.swift */,
+				8C899A7F2412EDE700D94A0E /* MemoryStorageExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8C899A662412E07A00D94A0E /* CachableNetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				8C899A672412E08200D94A0E /* CachableNetworkService.swift */,
+				8C899A6D2412E48900D94A0E /* CachableNetworkServiceFactory.swift */,
+			);
+			path = CachableNetworkService;
+			sourceTree = "<group>";
+		};
+		8C899A9B2412F96400D94A0E /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				8C899A9C2412F97000D94A0E /* Transition.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		8C899A9E2412FCC900D94A0E /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				8C899AB0241301D500D94A0E /* ItemFactory.swift */,
+				8C899AA02412FCF000D94A0E /* ItemModule.swift */,
+				8C899AA12412FCF000D94A0E /* ItemPresenter.swift */,
+				8C899AA22412FCF000D94A0E /* ItemRouter.swift */,
+				8C899AAE2413018100D94A0E /* ItemViewController.swift */,
+				8C899AA42412FCF000D94A0E /* ItemInteractor.swift */,
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
+		8C899AB22413023D00D94A0E /* Season */ = {
+			isa = PBXGroup;
+			children = (
+				8C5890B324166FB600CA80DF /* EpisodeViewModel.swift */,
+				8C899AB32413024C00D94A0E /* SeasonFactory.swift */,
+				8C899AB42413024C00D94A0E /* SeasonModule.swift */,
+				8C899AB52413024C00D94A0E /* SeasonPresenter.swift */,
+				8C899AB62413024C00D94A0E /* SeasonRouter.swift */,
+				8C899AB72413024C00D94A0E /* SeasonViewController.swift */,
+				8C899AB82413024C00D94A0E /* SeasonInteractor.swift */,
+			);
+			path = Season;
+			sourceTree = "<group>";
+		};
+		8C9B6C52241283AF00ECDB84 /* AlamofireDownloadService */ = {
+			isa = PBXGroup;
+			children = (
+				8C9B6C4C241282BF00ECDB84 /* AlamofireDownloadService.swift */,
+				8C9B6C4E2412834600ECDB84 /* AlamofireDownloadServiceFactory.swift */,
+			);
+			path = AlamofireDownloadService;
+			sourceTree = "<group>";
+		};
+		8C9B6C5C241289AD00ECDB84 /* DefaultAccessTokenService */ = {
+			isa = PBXGroup;
+			children = (
+				8CD46D172401BC5A006DB466 /* DefaultAccessTokenServiceFactory.swift */,
+				8CD46D1F2401BE45006DB466 /* DefaultAccessTokenService.swift */,
+			);
+			path = DefaultAccessTokenService;
+			sourceTree = "<group>";
+		};
+		8C9B6C5D241289D000ECDB84 /* MoyaNetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				8CD46D0D2401BA74006DB466 /* MotaNetworkServiceFactory.swift */,
+				8C1C684423FAE48F0094E7F5 /* MoyaNetworkService.swift */,
+			);
+			path = MoyaNetworkService;
+			sourceTree = "<group>";
+		};
+		8C9B6C5E241289E900ECDB84 /* DefaultAuthorizationService */ = {
+			isa = PBXGroup;
+			children = (
+				8CD46D122401BBDC006DB466 /* DefaultAuthorizationServiceFactory.swift */,
+				8CD46D232401BE7B006DB466 /* DefaultAuthorizationService.swift */,
+			);
+			path = DefaultAuthorizationService;
+			sourceTree = "<group>";
+		};
+		8C9B6C5F241289FC00ECDB84 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8CD46CFE240168F5006DB466 /* GeneratedModels.swift */,
+				8CD46D352401C3E7006DB466 /* AccessToken.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8CA9173724114782008959C0 /* KeyChainStorage */ = {
+			isa = PBXGroup;
+			children = (
+				8C61026A23FB3854000BEFD9 /* KeyChainStorage.swift */,
+				8CA917382411479E008959C0 /* KeyChainStorageFactory.swift */,
+			);
+			path = KeyChainStorage;
+			sourceTree = "<group>";
+		};
+		8CA9173C24114998008959C0 /* FileStorage */ = {
+			isa = PBXGroup;
+			children = (
+				8CEBED3D240EB38700B6E405 /* FileStorage.swift */,
+				8CA9173D241149A5008959C0 /* FileStorageFactory.swift */,
+			);
+			path = FileStorage;
 			sourceTree = "<group>";
 		};
 		8CD46D062401AAD6006DB466 /* Authorization */ = {
@@ -187,9 +423,9 @@
 		8CD46D0F2401BBB0006DB466 /* AuthorizationService */ = {
 			isa = PBXGroup;
 			children = (
-				8CD46D302401C327006DB466 /* Factory */,
 				8CD46D212401BE68006DB466 /* AuthorizationService.swift */,
-				8CD46D232401BE7B006DB466 /* DefaultAuthorizationService.swift */,
+				8CD46D102401BBB8006DB466 /* AuthorizationServiceFactory.swift */,
+				8C9B6C5E241289E900ECDB84 /* DefaultAuthorizationService */,
 			);
 			path = AuthorizationService;
 			sourceTree = "<group>";
@@ -197,10 +433,9 @@
 		8CD46D142401BC33006DB466 /* AccessTokenService */ = {
 			isa = PBXGroup;
 			children = (
-				8CD46D2F2401C323006DB466 /* Factory */,
 				8CD46D1D2401BE39006DB466 /* AccessTokenService.swift */,
-				8CD46D1F2401BE45006DB466 /* DefaultAccessTokenService.swift */,
-				8CD46D352401C3E7006DB466 /* AccessToken.swift */,
+				8CD46D152401BC3D006DB466 /* AccessTokenServiceFactory.swift */,
+				8C9B6C5C241289AD00ECDB84 /* DefaultAccessTokenService */,
 			);
 			path = AccessTokenService;
 			sourceTree = "<group>";
@@ -209,6 +444,7 @@
 			isa = PBXGroup;
 			children = (
 				8C1C683E23FAE4460094E7F5 /* ResponseSerializer.swift */,
+				8CB0F688241BCE560025C066 /* EmptyResponseSerializer.swift */,
 				8C1C684623FAF4950094E7F5 /* DataResponseSerializer.swift */,
 				8C61027023FBECDD000BEFD9 /* DecodableResponseSerializer.swift */,
 			);
@@ -219,7 +455,9 @@
 			isa = PBXGroup;
 			children = (
 				8C61026823FB382B000BEFD9 /* KeyValueStorage.swift */,
-				8C61026A23FB3854000BEFD9 /* KeyChainStorage.swift */,
+				8CA9173A241147AB008959C0 /* KeyValueStorageFactory.swift */,
+				8CA9173724114782008959C0 /* KeyChainStorage */,
+				8CA9173C24114998008959C0 /* FileStorage */,
 			);
 			path = KeyValueStorage;
 			sourceTree = "<group>";
@@ -239,6 +477,7 @@
 				8CE898CD23F53936006531BC /* Assets.xcassets */,
 				8CE898D223F53936006531BC /* LaunchScreen.storyboard */,
 				8CE898D523F53936006531BC /* Info.plist */,
+				8C6A77382415075F00056826 /* KinoPub-Bridging-Header.h */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -246,7 +485,6 @@
 		8CD46D2D2401C2F5006DB466 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
-				8CD46CFE240168F5006DB466 /* GeneratedModels.swift */,
 				8CD46D092401BA08006DB466 /* ServiceLocator.swift */,
 				8C61027223FBED84000BEFD9 /* Secret.swift */,
 			);
@@ -256,26 +494,6 @@
 		8CD46D2E2401C31A006DB466 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
-				8CD46D0B2401BA5A006DB466 /* NetworkServiceFactory.swift */,
-				8CD46D0D2401BA74006DB466 /* MotaNetworkServiceFactory.swift */,
-			);
-			path = Factory;
-			sourceTree = "<group>";
-		};
-		8CD46D2F2401C323006DB466 /* Factory */ = {
-			isa = PBXGroup;
-			children = (
-				8CD46D152401BC3D006DB466 /* AccessTokenServiceFactory.swift */,
-				8CD46D172401BC5A006DB466 /* DefaultAccessTokenServiceFactory.swift */,
-			);
-			path = Factory;
-			sourceTree = "<group>";
-		};
-		8CD46D302401C327006DB466 /* Factory */ = {
-			isa = PBXGroup;
-			children = (
-				8CD46D102401BBB8006DB466 /* AuthorizationServiceFactory.swift */,
-				8CD46D122401BBDC006DB466 /* DefaultAuthorizationServiceFactory.swift */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -284,24 +502,34 @@
 			isa = PBXGroup;
 			children = (
 				8CD46D332401C3B1006DB466 /* DeviceTokenRequest.swift */,
+				8CB0F686241BCE180025C066 /* AnyReqest.swift */,
+				8C899AAB2412FF3D00D94A0E /* ItemRequest.swift */,
+				8C899A8D2412F69400D94A0E /* BookmarkRequest.swift */,
 				8CD46D3E2401C689006DB466 /* BookmarksRequest.swift */,
 				8CD46D372401C4FB006DB466 /* DeviceCodeRequest.swift */,
+				8C9B6C6124128AA400ECDB84 /* RefreshTokenRequest.swift */,
+				8C899A692412E20E00D94A0E /* CacheableRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
 		};
-		8CD46D392401C5DE006DB466 /* View */ = {
+		8CD46D392401C5DE006DB466 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				8C6A773924158FC600056826 /* VLCPlayer */,
+				8C899AB22413023D00D94A0E /* Season */,
+				8C899A9E2412FCC900D94A0E /* Item */,
+				8C1897BA240299300023DE3D /* Bookmark */,
 				8CD46D3B2401C64E006DB466 /* Bookmarks */,
 				8CD46D062401AAD6006DB466 /* Authorization */,
 			);
-			path = View;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		8CD46D3A2401C5EC006DB466 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				8C7A54542410414D0030339C /* DownloadService */,
 				8CD46D2A2401C1BD006DB466 /* KeyValueStorage */,
 				8CD46D142401BC33006DB466 /* AccessTokenService */,
 				8CD46D0F2401BBB0006DB466 /* AuthorizationService */,
@@ -313,10 +541,12 @@
 		8CD46D3B2401C64E006DB466 /* Bookmarks */ = {
 			isa = PBXGroup;
 			children = (
-				8CD46D3C2401C65E006DB466 /* BookmarksView.swift */,
-				8CD46D452401C7ED006DB466 /* BookmarksViewController.swift */,
-				8CD46D402401C71A006DB466 /* BookmarksViewModel.swift */,
-				8CD46D472401C8F7006DB466 /* BookmarksModuleFactory.swift */,
+				8C899A812412EE1500D94A0E /* BookmarksFactory.swift */,
+				8C899A822412EE1500D94A0E /* BookmarksModule.swift */,
+				8C899A832412EE1500D94A0E /* BookmarksPresenter.swift */,
+				8C899A842412EE1500D94A0E /* BookmarksRouter.swift */,
+				8C899A852412EE1500D94A0E /* BookmarksViewController.swift */,
+				8C899A862412EE1500D94A0E /* BookmarksInteractor.swift */,
 			);
 			path = Bookmarks;
 			sourceTree = "<group>";
@@ -335,7 +565,6 @@
 				8CE898C623F53935006531BC /* KinoPub */,
 				8CE898C523F53935006531BC /* Products */,
 				88E740D73FEF13E0254F669D /* Pods */,
-				5818C0929FF1849DE465BB0E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -350,18 +579,15 @@
 		8CE898C623F53935006531BC /* KinoPub */ = {
 			isa = PBXGroup;
 			children = (
+				8C5890B024166BF200CA80DF /* View */,
+				8C899A9B2412F96400D94A0E /* Modules */,
+				8C9B6C5F241289FC00ECDB84 /* Models */,
+				8C859CBF2408787700E33DE5 /* Extensions */,
 				8CD46D2D2401C2F5006DB466 /* Misc */,
 				8CD46D2B2401C1D0006DB466 /* AppDelegate */,
 				8CD46D2C2401C1E9006DB466 /* Support */,
 				8CD46D3A2401C5EC006DB466 /* Service */,
-				8CD46D392401C5DE006DB466 /* View */,
-				8CE898CB23F53935006531BC /* ContentView.swift */,
-				8CD46CFA2400A01D006DB466 /* BookmarksView2.swift */,
-				8CD46D002401802F006DB466 /* BookmarkView.swift */,
-				8CD46D02240188F2006DB466 /* VideoItemView.swift */,
-				8CD46D0424019092006DB466 /* SeasonView.swift */,
-				8CD46CF82400891D006DB466 /* MainView.swift */,
-				8C49E7E6240060C3009FD161 /* ColorExtension.swift */,
+				8CD46D392401C5DE006DB466 /* ViewController */,
 				8CE898CF23F53936006531BC /* Preview Content */,
 			);
 			path = KinoPub;
@@ -382,17 +608,25 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8CE898D823F53936006531BC /* Build configuration list for PBXNativeTarget "KinoPub" */;
 			buildPhases = (
-				6E4EF4FF978C25ABE69700DB /* [CP] Check Pods Manifest.lock */,
+				8CB0F68A241BCF1C0025C066 /* ShellScript */,
 				8CE898C023F53935006531BC /* Sources */,
 				8CE898C123F53935006531BC /* Frameworks */,
 				8CE898C223F53935006531BC /* Resources */,
-				D0715C943C25C8EBF8A0B668 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = KinoPub;
+			packageProductDependencies = (
+				8CB083612422800C003FD474 /* Moya */,
+				8CB083642422804B003FD474 /* KeychainAccess */,
+				8CB083672422806C003FD474 /* Files */,
+				8CB0836A2422807F003FD474 /* AnyCodable */,
+				8CB0836D2422809D003FD474 /* DTTableViewManager */,
+				8CB0837024228258003FD474 /* Alamofire */,
+				8CB083962422879D003FD474 /* AHDownloadButton */,
+			);
 			productName = KinoPub;
 			productReference = 8CE898C423F53935006531BC /* KinoPub.app */;
 			productType = "com.apple.product-type.application";
@@ -421,6 +655,15 @@
 				Base,
 			);
 			mainGroup = 8CE898BB23F53935006531BC;
+			packageReferences = (
+				8CB083602422800C003FD474 /* XCRemoteSwiftPackageReference "Moya" */,
+				8CB083632422804B003FD474 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				8CB083662422806C003FD474 /* XCRemoteSwiftPackageReference "Files" */,
+				8CB083692422807F003FD474 /* XCRemoteSwiftPackageReference "AnyCodable" */,
+				8CB0836C2422809D003FD474 /* XCRemoteSwiftPackageReference "DTTableViewManager" */,
+				8CB0836F24228258003FD474 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				8CB083952422879D003FD474 /* XCRemoteSwiftPackageReference "AHDownloadButton" */,
+			);
 			productRefGroup = 8CE898C523F53935006531BC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -444,7 +687,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6E4EF4FF978C25ABE69700DB /* [CP] Check Pods Manifest.lock */ = {
+		8CB0F68A241BCF1C0025C066 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -452,36 +695,14 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KinoPub-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D0715C943C25C8EBF8A0B668 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KinoPub/Pods-KinoPub-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KinoPub/Pods-KinoPub-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KinoPub/Pods-KinoPub-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "#${PODS_ROOT}/SwiftLint/swiftlint lint --strict | sed 's/warning:/error:/g'\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -490,53 +711,91 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CD46D412401C71A006DB466 /* BookmarksViewModel.swift in Sources */,
-				8CD46D03240188F2006DB466 /* VideoItemView.swift in Sources */,
+				8C899AAC2412FF3D00D94A0E /* ItemRequest.swift in Sources */,
+				8C899AA82412FCF000D94A0E /* ItemRouter.swift in Sources */,
+				8C899A6A2412E20E00D94A0E /* CacheableRequest.swift in Sources */,
+				8C899A952412F6E900D94A0E /* BookmarkFactory.swift in Sources */,
 				8CE898C823F53935006531BC /* AppDelegate.swift in Sources */,
 				8CD46D182401BC5A006DB466 /* DefaultAccessTokenServiceFactory.swift in Sources */,
-				8CD46CF92400891D006DB466 /* MainView.swift in Sources */,
+				8C7A5456241041620030339C /* DownloadService.swift in Sources */,
+				8C899ABC2413024C00D94A0E /* SeasonRouter.swift in Sources */,
+				8C899A8E2412F69400D94A0E /* BookmarkRequest.swift in Sources */,
 				8C1C684523FAE48F0094E7F5 /* MoyaNetworkService.swift in Sources */,
+				8CB0F687241BCE180025C066 /* AnyReqest.swift in Sources */,
+				8C899A9D2412F97000D94A0E /* Transition.swift in Sources */,
 				8CD46D342401C3B1006DB466 /* DeviceTokenRequest.swift in Sources */,
 				8CD46D0A2401BA08006DB466 /* ServiceLocator.swift in Sources */,
 				8C1C684323FAE4760094E7F5 /* NetworkServiceError.swift in Sources */,
 				8CD46D202401BE45006DB466 /* DefaultAccessTokenService.swift in Sources */,
+				8C9B6C4F2412834600ECDB84 /* AlamofireDownloadServiceFactory.swift in Sources */,
 				8CD46D1A2401BDE4006DB466 /* AuthorizationModuleFactory.swift in Sources */,
+				8C859CC12408789000E33DE5 /* UITableViewExtension.swift in Sources */,
+				8CA9173B241147AB008959C0 /* KeyValueStorageFactory.swift in Sources */,
 				8CE898CA23F53935006531BC /* SceneDelegate.swift in Sources */,
+				8C899A6C2412E22D00D94A0E /* CacheableTargetType.swift in Sources */,
 				8CD46D282401BFC3006DB466 /* AuthTargetType.swift in Sources */,
 				8CD46D3F2401C689006DB466 /* BookmarksRequest.swift in Sources */,
 				8C1C684723FAF4950094E7F5 /* DataResponseSerializer.swift in Sources */,
 				8CD46D1C2401BE00006DB466 /* AuthorizationViewModel.swift in Sources */,
+				8C899A6E2412E48900D94A0E /* CachableNetworkServiceFactory.swift in Sources */,
+				8C899A8C2412EE1500D94A0E /* BookmarksInteractor.swift in Sources */,
+				8C899A802412EDE700D94A0E /* MemoryStorageExtension.swift in Sources */,
+				8C899A972412F6E900D94A0E /* BookmarkPresenter.swift in Sources */,
+				8CB0F689241BCE560025C066 /* EmptyResponseSerializer.swift in Sources */,
 				8CD46D1E2401BE39006DB466 /* AccessTokenService.swift in Sources */,
+				8C899ABB2413024C00D94A0E /* SeasonPresenter.swift in Sources */,
 				8CD46D132401BBDC006DB466 /* DefaultAuthorizationServiceFactory.swift in Sources */,
-				8CD46D3D2401C65E006DB466 /* BookmarksView.swift in Sources */,
 				8C1C683F23FAE4460094E7F5 /* ResponseSerializer.swift in Sources */,
+				8C899A982412F6E900D94A0E /* BookmarkRouter.swift in Sources */,
+				8C899A8A2412EE1500D94A0E /* BookmarksRouter.swift in Sources */,
 				8C49E7E7240060C3009FD161 /* ColorExtension.swift in Sources */,
 				8CD46D0E2401BA74006DB466 /* MotaNetworkServiceFactory.swift in Sources */,
-				8CD46D012401802F006DB466 /* BookmarkView.swift in Sources */,
+				8CFFA73A241A362700A3733D /* Publisher+Bind.swift in Sources */,
+				8C899AAD2413006300D94A0E /* ItemInteractor.swift in Sources */,
 				8CD46CFF240168F5006DB466 /* GeneratedModels.swift in Sources */,
+				8CA9173E241149A5008959C0 /* FileStorageFactory.swift in Sources */,
+				8C5890B424166FB600CA80DF /* EpisodeViewModel.swift in Sources */,
 				8C1C683D23FAE4240094E7F5 /* NetworkRequestType.swift in Sources */,
 				8CD46D0C2401BA5A006DB466 /* NetworkServiceFactory.swift in Sources */,
+				8C9B6C6224128AA400ECDB84 /* RefreshTokenRequest.swift in Sources */,
+				8C5890B224166C0000CA80DF /* DownloadButton.swift in Sources */,
+				8C899A962412F6E900D94A0E /* BookmarkModule.swift in Sources */,
 				8C61026B23FB3854000BEFD9 /* KeyChainStorage.swift in Sources */,
 				8C1C683A23FAE3C30094E7F5 /* NetworkService.swift in Sources */,
-				8CD46D0524019092006DB466 /* SeasonView.swift in Sources */,
+				8C899AAF2413018100D94A0E /* ItemViewController.swift in Sources */,
+				8CEBED3E240EB38700B6E405 /* FileStorage.swift in Sources */,
+				8C899ABA2413024C00D94A0E /* SeasonModule.swift in Sources */,
+				8C899A892412EE1500D94A0E /* BookmarksPresenter.swift in Sources */,
+				8CA917392411479E008959C0 /* KeyChainStorageFactory.swift in Sources */,
+				8C899A992412F6E900D94A0E /* BookmarkViewController.swift in Sources */,
+				8C899AA72412FCF000D94A0E /* ItemPresenter.swift in Sources */,
+				8C899A682412E08200D94A0E /* CachableNetworkService.swift in Sources */,
+				8C899AB92413024C00D94A0E /* SeasonFactory.swift in Sources */,
 				8CD46D222401BE68006DB466 /* AuthorizationService.swift in Sources */,
+				8C899A8B2412EE1500D94A0E /* BookmarksViewController.swift in Sources */,
 				8CD46D382401C4FB006DB466 /* DeviceCodeRequest.swift in Sources */,
-				8CD46D482401C8F7006DB466 /* BookmarksModuleFactory.swift in Sources */,
 				8C61026923FB382B000BEFD9 /* KeyValueStorage.swift in Sources */,
+				8C899A9A2412F6E900D94A0E /* BookmarkInteractor.swift in Sources */,
+				8C899A872412EE1500D94A0E /* BookmarksFactory.swift in Sources */,
+				8C899AA62412FCF000D94A0E /* ItemModule.swift in Sources */,
 				8CD46D082401AB0F006DB466 /* AuthorizationViewController.swift in Sources */,
 				8CD46D162401BC3D006DB466 /* AccessTokenServiceFactory.swift in Sources */,
+				8C899AB1241301D500D94A0E /* ItemFactory.swift in Sources */,
 				8CD46D112401BBB8006DB466 /* AuthorizationServiceFactory.swift in Sources */,
+				8C9B6C4D241282BF00ECDB84 /* AlamofireDownloadService.swift in Sources */,
 				8C1C684123FAE4630094E7F5 /* DecodingTargetType.swift in Sources */,
-				8CE898CC23F53935006531BC /* ContentView.swift in Sources */,
+				8C899ABE2413024C00D94A0E /* SeasonInteractor.swift in Sources */,
+				8C899A882412EE1500D94A0E /* BookmarksModule.swift in Sources */,
 				8C61027323FBED84000BEFD9 /* Secret.swift in Sources */,
 				8C61027123FBECDD000BEFD9 /* DecodableResponseSerializer.swift in Sources */,
-				8CD46CFB2400A01D006DB466 /* BookmarksView2.swift in Sources */,
-				8CD46D362401C3E7006DB466 /* AccessToken.swift in Sources */,
 				8CD46D262401BF01006DB466 /* ApiTargetType.swift in Sources */,
+				8C6A773B24158FD900056826 /* VLCPlayerViewController.swift in Sources */,
 				8C1C684923FAF5D00094E7F5 /* AuthorizationView.swift in Sources */,
 				8CD46D442401C730006DB466 /* TokenPlugin.swift in Sources */,
-				8CD46D462401C7ED006DB466 /* BookmarksViewController.swift in Sources */,
+				8C9B6C512412835700ECDB84 /* DownloadServiceFactory.swift in Sources */,
 				8CD46D242401BE7B006DB466 /* DefaultAuthorizationService.swift in Sources */,
+				8C9B6C6024128A3F00ECDB84 /* AccessToken.swift in Sources */,
+				8C899ABD2413024C00D94A0E /* SeasonViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -672,19 +931,21 @@
 		};
 		8CE898D923F53936006531BC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 52FDA6DD36BAFBD6EF993897 /* Pods-KinoPub.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"KinoPub/Preview Content\"";
+				DEVELOPMENT_TEAM = 3WSFY86J7V;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = KinoPub/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.sugarandcandy.KinoPub;
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.sugarandcandy.pub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KinoPub/Support/KinoPub-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -692,19 +953,21 @@
 		};
 		8CE898DA23F53936006531BC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AE5AF6F19A7D54C55D664735 /* Pods-KinoPub.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"KinoPub/Preview Content\"";
+				DEVELOPMENT_TEAM = LXCS739P9Z;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = KinoPub/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.sugarandcandy.KinoPub;
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.sugarandcandy.pub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KinoPub/Support/KinoPub-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -732,6 +995,103 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8CB083602422800C003FD474 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.0.0;
+			};
+		};
+		8CB083632422804B003FD474 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
+		8CB083662422806C003FD474 /* XCRemoteSwiftPackageReference "Files" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JohnSundell/Files.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.1;
+			};
+		};
+		8CB083692422807F003FD474 /* XCRemoteSwiftPackageReference "AnyCodable" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Flight-School/AnyCodable.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.3;
+			};
+		};
+		8CB0836C2422809D003FD474 /* XCRemoteSwiftPackageReference "DTTableViewManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/DenTelezhkin/DTTableViewManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		8CB0836F24228258003FD474 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.4;
+			};
+		};
+		8CB083952422879D003FD474 /* XCRemoteSwiftPackageReference "AHDownloadButton" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/makleso6/AHDownloadButton.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8CB083612422800C003FD474 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CB083602422800C003FD474 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		8CB083642422804B003FD474 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CB083632422804B003FD474 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+		8CB083672422806C003FD474 /* Files */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CB083662422806C003FD474 /* XCRemoteSwiftPackageReference "Files" */;
+			productName = Files;
+		};
+		8CB0836A2422807F003FD474 /* AnyCodable */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CB083692422807F003FD474 /* XCRemoteSwiftPackageReference "AnyCodable" */;
+			productName = AnyCodable;
+		};
+		8CB0836D2422809D003FD474 /* DTTableViewManager */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CB0836C2422809D003FD474 /* XCRemoteSwiftPackageReference "DTTableViewManager" */;
+			productName = DTTableViewManager;
+		};
+		8CB0837024228258003FD474 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CB0836F24228258003FD474 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		8CB083962422879D003FD474 /* AHDownloadButton */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CB083952422879D003FD474 /* XCRemoteSwiftPackageReference "AHDownloadButton" */;
+			productName = AHDownloadButton;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8CE898BC23F53935006531BC /* Project object */;
 }

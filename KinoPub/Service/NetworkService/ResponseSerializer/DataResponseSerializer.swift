@@ -10,7 +10,7 @@ import Foundation
 import Moya
 
 public struct DataResponseSerializer: ResponseSerializer {
-    
+
     public func process(_ response: Moya.Response) throws -> Data {
         return response.data
     }

@@ -11,7 +11,7 @@ import Moya
 public struct DeviceTokenRequest: AuthTargetType {
     public var serializer: DataResponseSerializer { .init() }
     public var path: String { "device" }
-    public var method: Moya.Method {  .post }
+    public var method: Moya.Method { .post }
     public var validationType: ValidationType { .successCodes }
     public var task: Moya.Task {
         .requestParameters(parameters:

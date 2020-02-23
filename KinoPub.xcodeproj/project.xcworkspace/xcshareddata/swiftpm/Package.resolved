@@ -1,0 +1,97 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "AHDownloadButton",
+        "repositoryURL": "https://github.com/makleso6/AHDownloadButton.git",
+        "state": {
+          "branch": null,
+          "revision": "3460caba64c486ed34146742c883f8d0e866c080",
+          "version": "1.2.3"
+        }
+      },
+      {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
+        "state": {
+          "branch": null,
+          "revision": "11928850d7273a8cd41bb766f2fc93b4d724b79b",
+          "version": "5.0.4"
+        }
+      },
+      {
+        "package": "AnyCodable",
+        "repositoryURL": "https://github.com/Flight-School/AnyCodable.git",
+        "state": {
+          "branch": null,
+          "revision": "6e9610258e9f1044b5e0d88545052846448b43c3",
+          "version": "0.2.3"
+        }
+      },
+      {
+        "package": "DTModelStorage",
+        "repositoryURL": "https://github.com/DenTelezhkin/DTModelStorage",
+        "state": {
+          "branch": null,
+          "revision": "2a202af2e6dfbef70983f4eed8ffda54b9a92e46",
+          "version": "8.0.0"
+        }
+      },
+      {
+        "package": "DTTableViewManager",
+        "repositoryURL": "https://github.com/DenTelezhkin/DTTableViewManager",
+        "state": {
+          "branch": null,
+          "revision": "e18474be8289c1683ae196a6d4553d3216b82208",
+          "version": "7.0.0"
+        }
+      },
+      {
+        "package": "Files",
+        "repositoryURL": "https://github.com/JohnSundell/Files.git",
+        "state": {
+          "branch": null,
+          "revision": "22fe84797d499ffca911ccd896b34efaf06a50b9",
+          "version": "4.1.1"
+        }
+      },
+      {
+        "package": "KeychainAccess",
+        "repositoryURL": "https://github.com/kishikawakatsumi/KeychainAccess.git",
+        "state": {
+          "branch": null,
+          "revision": "b920ad7df3c73189dcdd4aa05c540849b2010dbf",
+          "version": "4.1.0"
+        }
+      },
+      {
+        "package": "Moya",
+        "repositoryURL": "https://github.com/Moya/Moya.git",
+        "state": {
+          "branch": null,
+          "revision": "b3e5a233e0d85fd4d69f561c80988590859c7dee",
+          "version": "14.0.0"
+        }
+      },
+      {
+        "package": "ReactiveSwift",
+        "repositoryURL": "https://github.com/Moya/ReactiveSwift.git",
+        "state": {
+          "branch": null,
+          "revision": "f195d82bb30e412e70446e2b4a77e1b514099e88",
+          "version": "6.1.0"
+        }
+      },
+      {
+        "package": "RxSwift",
+        "repositoryURL": "https://github.com/ReactiveX/RxSwift.git",
+        "state": {
+          "branch": null,
+          "revision": "c1bd31b397d87a54467af4161dde9d6b27720c19",
+          "version": "5.1.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
