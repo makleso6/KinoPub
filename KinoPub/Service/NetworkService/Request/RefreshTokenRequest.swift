@@ -10,7 +10,7 @@ import Moya
 
 public struct RefreshTokenRequest: AuthTargetType {
     public var serializer: DecodableResponseSerializer<AccessToken> { .init() }
-    public var path: String { "device" }
+    public var path: String { "token" }
     public var method: Moya.Method { .post }
     public var validationType: ValidationType { .successCodes }
     public var task: Moya.Task {

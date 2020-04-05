@@ -18,8 +18,9 @@ public final class BookmarkPresenter {
     internal weak var view: BookmarkPresenterOutput?
     private let interactor: BookmarkInteractorInput
     private let router: BookmarkRouterInput
-
+    @Published private var page = 1
     private var model: Bookmark?
+    
     // MARK: - Initialization
 
     public init(interactor: BookmarkInteractorInput,
@@ -33,6 +34,10 @@ public final class BookmarkPresenter {
 // MARK: - BookmarkViewOutput
 
 extension BookmarkPresenter: BookmarkViewOutput {
+    public var title: String? {
+        model?.title
+    }
+    
     public func didSelect(model: Bookmark.Item) {
         router.didSelect(model: model)
     }
@@ -42,8 +47,35 @@ extension BookmarkPresenter: BookmarkViewOutput {
     }
 
     public func requestBookmark() -> AnyPublisher<[Bookmark.Item], Never> {
+        return $page
+            .flatMap({ [weak self] (page) -> AnyPublisher<[Bookmark.Item], Never> in
+                guard let self = self else { return Empty().eraseToAnyPublisher() }
+                return self.requestBookmark(by: page)
+            })
+            .eraseToAnyPublisher()
+    }
+    
+    private func requestBookmark(by page: Int) -> AnyPublisher<[Bookmark.Item], Never> {
         guard let model = self.model else { return Empty().eraseToAnyPublisher() }
-        return interactor.requestBookmark(model: model)
+        return interactor
+            .requestBookmark(id: model.id, page: page)
+            .receive(on: DispatchQueue.main)
+            .handleEvents(receiveCompletion: { [weak self] _ in
+                self?.view?.finishLoading()
+            })
+            .catch({_ in 
+                Empty()
+            })
+            .eraseToAnyPublisher()
+    }
+    
+    public func requestNextPage() {
+        page += 1
+    }
+    
+    public func reloadData() {
+        interactor.prepareToReloadData()
+        page = 1
     }
 
 }

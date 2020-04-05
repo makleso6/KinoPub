@@ -10,13 +10,13 @@ import Foundation
 
 public final class DefaultAccessTokenServiceFactory: AccessTokenServiceFactory {
 
-    private let keyValueStorage: KeyValueStorage
+    private let keyValueStorage: KeyValueStorageFactory
 
     public lazy var lazyAccessTokenService: AccessTokenService = {
         return DefaultAccessTokenService(keyValueStorage: keyValueStorage)
     }()
 
-    public init(keyValueStorage: KeyValueStorage) {
+    public init(keyValueStorage: KeyValueStorageFactory) {
         self.keyValueStorage = keyValueStorage
     }
 }

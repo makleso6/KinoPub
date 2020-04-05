@@ -16,8 +16,8 @@ public final class ItemFactory: TransitionFactory {
 
     private let networkService: NetworkServiceFactory
     public init() {
-        let keyValueStorage = KeyChainStorageFactory().lazyKeyValueStorage
-        let accessTokenService = DefaultAccessTokenService(keyValueStorage: keyValueStorage)
+        let keyValueStorage = KeyChainStorageFactory()
+        let accessTokenService = DefaultAccessTokenServiceFactory(keyValueStorage: keyValueStorage)
         self.networkService = MoyaNetworkServiceFactory(accessTokenService: accessTokenService)
     }
     public func instantiateModuleTransitionHandler() -> ViewType {

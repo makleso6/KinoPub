@@ -11,7 +11,7 @@ import Moya
 import Combine
 
 public final class MoyaNetworkServiceFactory: NetworkServiceFactory {
-    private let accessTokenService: AccessTokenService
+    private let accessTokenService: AccessTokenServiceFactory
 
     private lazy var tokenPlugin: PluginType = {
         TokenPlugin(accessTokenService: accessTokenService)
@@ -21,7 +21,7 @@ public final class MoyaNetworkServiceFactory: NetworkServiceFactory {
         return MoyaNetworkService(plugins: [tokenPlugin])
     }()
 
-    public init(accessTokenService: AccessTokenService) {
+    public init(accessTokenService: AccessTokenServiceFactory) {
         self.accessTokenService = accessTokenService
     }
 }

@@ -11,5 +11,5 @@ import Combine
 public protocol AuthorizationService {
     func getDevice() -> AnyPublisher<DeviceCodeResponse, Error>
     func getToken(_ response: DeviceCodeResponse) -> AnyPublisher<AccessToken, Error>
-    func refreshAccessToken(_ accessToken: AccessToken) -> AnyPublisher<AccessToken, Error>
+    func refreshAccessToken() -> AnyPublisher<AccessToken, Error>
 }

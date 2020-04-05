@@ -1,34 +1,38 @@
 //
-//  CachableNetworkService.swift
+//  ErrorHandlingNetworkService.swift
 //  KinoPub
 //
-//  Created by Maksim Kolesnik on 06/03/2020.
+//  Created by Maksim Kolesnik on 05/04/2020.
 //  Copyright © 2020 Maksim Kolesnik. All rights reserved.
 //
 
 import Foundation
+import Combine
 import Moya
 import Alamofire
-import Combine
 
-public final class CachableNetworkService: CombineNetworkService {
-
+public final class ErrorHandlingNetworkService: CombineNetworkService {
     // MARK: - Private Properties
 
-    private var disposable = Set<AnyCancellable>()    
+    private var disposable = Set<AnyCancellable>()
 
-    private let underluing: CombineNetworkService
+    private let networkService: NetworkServiceFactory
+    private let authorizationService: AuthorizationServiceFactory
 
     // MARK: - Initializator
 
-    public init(underluing: CombineNetworkService) {
-        self.underluing = underluing
+    public init(networkService: NetworkServiceFactory,
+                authorizationService: AuthorizationServiceFactory) {
+        self.networkService = networkService
+        self.authorizationService = authorizationService
     }
 
     // MARK: - FutureNetworkService
     // swiftlint:disable cyclomatic_complexity
     public func execute<R>(_ request: R) -> AnyPublisher<R.ResponseSerializerType.EntityType, Error> where R: DecodingTargetType {
-        return underluing.execute(request)
+        return networkService
+            .lazyNetworkService
+            .execute(request)
             .catch({ [weak self] (error) -> AnyPublisher<R.ResponseSerializerType.EntityType, Error> in
                 guard let self = self else { return Fail(error: error).eraseToAnyPublisher() }
                 switch error {
@@ -43,8 +47,13 @@ public final class CachableNetworkService: CombineNetworkService {
                             case .unacceptableStatusCode(code: let code):
                                 switch code {
                                 case 401:
-                                    let failuerCacheableRequest = CacheableRequest(wrapped: request, cachePolicy: .reloadIgnoringLocalCacheData)
-                                    return self.execute(failuerCacheableRequest)
+//                                    let refreshToken =
+                                    return self.authorizationService.lazyAuthorizationService.refreshAccessToken()
+                                        .flatMap({ _ in
+                                                return self.execute(request)
+                                        })
+                                        .eraseToAnyPublisher()
+                                    
                                 case 500:
                                     let failuerCacheableRequest = CacheableRequest(wrapped: request, cachePolicy: .returnCacheDataDontLoad)
                                     return self.execute(failuerCacheableRequest)
@@ -74,7 +83,7 @@ public final class CachableNetworkService: CombineNetworkService {
             })
             .eraseToAnyPublisher()
     }
-
+    
     @discardableResult
     public func execute<R>(_ request: R,
                            callbackQueue: DispatchQueue?,

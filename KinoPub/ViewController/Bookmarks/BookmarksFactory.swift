@@ -17,9 +17,14 @@ public final class BookmarksFactory: TransitionFactory {
 
     private let networkService: NetworkServiceFactory
     public init() {
-        let keyValueStorage = KeyChainStorageFactory().lazyKeyValueStorage
-        let accessTokenService = DefaultAccessTokenService(keyValueStorage: keyValueStorage)
-        self.networkService = MoyaNetworkServiceFactory(accessTokenService: accessTokenService)
+        let keyValueStorage = KeyChainStorageFactory()
+        let accessTokenService = DefaultAccessTokenServiceFactory(keyValueStorage: keyValueStorage)
+        let moyaNetworkService = MoyaNetworkServiceFactory(accessTokenService: accessTokenService)
+        let authorizationService = DefaultAuthorizationServiceFactory(networkService: moyaNetworkService,
+                                                                      accessTokenService: accessTokenService)
+        let errorHandling = ErrorHandlingNetworkServiceFactory(networkService: moyaNetworkService,
+                                                               authorizationService: authorizationService)
+        self.networkService = errorHandling
     }
 
     public func instantiateModuleTransitionHandler() -> ViewType {

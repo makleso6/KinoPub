@@ -15,7 +15,11 @@ public final class SeasonFactory: TransitionFactory {
     public typealias ViewType = SeasonViewController
 
     public func instantiateModuleTransitionHandler() -> ViewType {
-        let interactor = SeasonInteractor(downloadService: AlamofireDownloadServiceFactory(), networkService: MoyaNetworkServiceFactory(accessTokenService: DefaultAccessTokenServiceFactory.init(keyValueStorage: ServiceLocator.shared.keyChainStorage).lazyAccessTokenService))
+        let keyValueStorage = KeyChainStorageFactory()
+        let accessTokenService = DefaultAccessTokenServiceFactory(keyValueStorage: keyValueStorage)
+        let moyaNetworkService = MoyaNetworkServiceFactory(accessTokenService: accessTokenService)
+        let interactor = SeasonInteractor(downloadService: AlamofireDownloadServiceFactory(),
+                                          networkService: moyaNetworkService)
         let router = SeasonRouter()
         let presenter = SeasonPresenter(interactor: interactor, router: router)
     	let viewController = ViewType(presenter: presenter)

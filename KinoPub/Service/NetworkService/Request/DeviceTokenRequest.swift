@@ -9,7 +9,7 @@
 import Moya
 
 public struct DeviceTokenRequest: AuthTargetType {
-    public var serializer: DataResponseSerializer { .init() }
+    public var serializer: DecodableResponseSerializer<AccessToken> { .init() }
     public var path: String { "device" }
     public var method: Moya.Method { .post }
     public var validationType: ValidationType { .successCodes }

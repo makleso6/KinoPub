@@ -11,7 +11,7 @@ import SwiftUI
 import Combine
 
 public final class AuthorizationViewModel: ObservableObject {
-    public var code: String = ""
+    @Published public var code: String = "CODE"
     public var callBack = PassthroughSubject<Bool, Never>()
     private var disposables = Set<AnyCancellable>()
 
@@ -26,6 +26,9 @@ public final class AuthorizationViewModel: ObservableObject {
         let pub = authorizationService.getDevice()
 
         pub.map({ $0.userCode })
+            .handleEvents(receiveOutput: { (code) in
+                print("CODE: ", code)
+            })
             .catch({ (_) -> Empty<String, Never> in
                 return .init()
             })

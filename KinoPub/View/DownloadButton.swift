@@ -22,7 +22,6 @@ public final class DownloadButton: UIView {
         case downloaded
     }
     
-    
     private lazy var containerView: UIView = {
         let view = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -34,7 +33,6 @@ public final class DownloadButton: UIView {
             downloadButton.progress = progress
         }
     }
-    
     private lazy var downloadButton: AHDownloadButton = {
         
         let downloadButton = AHDownloadButton(alignment: .center)

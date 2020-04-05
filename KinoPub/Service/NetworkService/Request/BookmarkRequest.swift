@@ -12,10 +12,15 @@ public struct BookmarkRequest: ApiTargetType {
     public var serializer: DecodableResponseSerializer<BookmarkResponse> { .init() }
     public var path: String { "bookmarks/\(id)" }
     public var method: Moya.Method { .get }
-    public var task: Moya.Task { .requestPlain }
+    public var task: Moya.Task {
+        .requestParameters(parameters: ["page": page], encoding: URLEncoding())
+    }
     public let id: Int
-    public init(id: Int) {
+    public let page: Int
+    public init(id: Int,
+                page: Int) {
         self.id = id
+        self.page = page
     }
 }
 

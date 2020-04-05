@@ -15,7 +15,8 @@ import Combine
 
 public protocol BookmarkInteractorInput: AnyObject {
     func interact()
-    func requestBookmark(model: Bookmark) -> AnyPublisher<[Bookmark.Item], Never>
+    func prepareToReloadData()
+    func requestBookmark(id: Int, page: Int) -> AnyPublisher<[Bookmark.Item], Error>
 }
 
 public protocol BookmarkInteractorOutput: AnyObject {
@@ -30,6 +31,7 @@ public protocol BookmarkPresenterInput: AnyObject {
 
 public protocol BookmarkPresenterOutput: AnyObject {
     func setupInitialState()
+    func finishLoading()
 }
 
 // MARK: - Router
@@ -49,7 +51,10 @@ public protocol BookmarkViewInput: AnyObject {
 }
 
 public protocol BookmarkViewOutput: AnyObject {
+    var title: String? { get }
     func didTriggerViewReadyEvent()
     func requestBookmark() -> AnyPublisher<[Bookmark.Item], Never>
+    func requestNextPage()
+    func reloadData()
     func didSelect(model: Bookmark.Item)
 }

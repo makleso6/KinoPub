@@ -10,13 +10,17 @@ import Foundation
 
 public final class DefaultAuthorizationServiceFactory: AuthorizationServiceFactory {
 
-    private let networkService: CombineNetworkService
+    private let networkService: NetworkServiceFactory
+    private let accessTokenService: AccessTokenServiceFactory
 
     public lazy var lazyAuthorizationService: AuthorizationService = {
-        return DefaultAuthorizationService(networkService: networkService)
+        return DefaultAuthorizationService(networkService: networkService,
+                                           accessTokenService: accessTokenService)
     }()
 
-    public init(networkService: CombineNetworkService) {
+    public init(networkService: NetworkServiceFactory,
+                accessTokenService: AccessTokenServiceFactory) {
         self.networkService = networkService
+        self.accessTokenService = accessTokenService
     }
 }

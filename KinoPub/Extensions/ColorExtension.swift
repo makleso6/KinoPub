@@ -12,3 +12,9 @@ extension Color {
     public static var baseText: Color { .init("BaseText") }
     public static var baseBackgroung: Color { .init("BaseBackgroung") }
 }
+
+extension UIColor {
+    public static var baseText: UIColor? { UIColor(named: "BaseText") }
+    public static var baseBackgroung: UIColor? { UIColor(named: "BaseBackgroung") }
+
+}

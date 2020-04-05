@@ -22,6 +22,7 @@ extension BookmarksRouter: BookmarksRouterInput {
             try Transition(source: viewController)
                 .openModule(using: BookmarkFactory(), with: { (source, destination) in
                     source.navigationController?.pushViewController(destination, animated: true)
+//                    source.showDetailViewController(UINavigationController.init(rootViewController: destination), sender: nil)
                 })
                 .perform(moduleInput: { (presenter) in
                     presenter.setupWith(model)

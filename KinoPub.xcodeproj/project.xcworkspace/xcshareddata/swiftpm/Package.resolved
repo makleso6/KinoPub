@@ -29,6 +29,33 @@
         }
       },
       {
+        "package": "CombineCocoa",
+        "repositoryURL": "https://github.com/CombineCommunity/CombineCocoa.git",
+        "state": {
+          "branch": null,
+          "revision": "c31c85b6f8494247b69997324312dce8bf55b34b",
+          "version": "0.1.0"
+        }
+      },
+      {
+        "package": "CombineDataSources",
+        "repositoryURL": "https://github.com/CombineCommunity/CombineDataSources.git",
+        "state": {
+          "branch": null,
+          "revision": "362795e0336f2c1637036f692a3b5d05806302b4",
+          "version": "0.2.5"
+        }
+      },
+      {
+        "package": "DTCollectionViewManager",
+        "repositoryURL": "https://github.com/DenTelezhkin/DTCollectionViewManager.git",
+        "state": {
+          "branch": null,
+          "revision": "ac0c4e9d01dea7d6253b6947357646760a071dff",
+          "version": "7.0.0"
+        }
+      },
+      {
         "package": "DTModelStorage",
         "repositoryURL": "https://github.com/DenTelezhkin/DTModelStorage",
         "state": {
@@ -62,6 +89,15 @@
           "branch": null,
           "revision": "b920ad7df3c73189dcdd4aa05c540849b2010dbf",
           "version": "4.1.0"
+        }
+      },
+      {
+        "package": "Kingfisher",
+        "repositoryURL": "https://github.com/onevcat/Kingfisher.git",
+        "state": {
+          "branch": null,
+          "revision": "56075f629bc3915e1bfa876d175df67e1a7cbe3c",
+          "version": "5.13.2"
         }
       },
       {

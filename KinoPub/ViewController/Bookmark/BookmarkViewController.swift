@@ -9,19 +9,49 @@
 //
 
 import UIKit
-import DTTableViewManager
+import DTCollectionViewManager
 import DTModelStorage
+import Kingfisher
+import CombineCocoa
+import Combine
+import CombineDataSources
 
 public final class BookmarkViewController: UIViewController, TransitionView {
 
     // MARK: - Private
 
-    fileprivate lazy var _tableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .grouped)
-        tableView.delegate = self
-        return tableView
+    private var cancelable: Set<AnyCancellable> = .init()
+    private var isRefreshing = false
+    private lazy var refreshControl: UIRefreshControl = {
+        let control = UIRefreshControl()
+        return control
     }()
 
+    private lazy var _collectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
+        collectionView.contentInset = UIEdgeInsets(top: 8.0, left: 8, bottom: 8.0, right: 8)
+        collectionView.backgroundColor = .white
+        collectionView.alwaysBounceVertical = true
+        collectionView.refreshControl = refreshControl
+        collectionView.backgroundColor = .baseBackgroung
+//        [_collectionView setDelaysContentTouches:NO];
+        collectionView.delaysContentTouches = false
+        return collectionView
+    }()
+    
+    private lazy var collectionViewLayout: UICollectionViewLayout = {
+        let collectionViewLayout = UICollectionViewFlowLayout()
+        collectionViewLayout.scrollDirection = .vertical
+//        collectionViewLayout.scrollDirection = .horizontal
+        collectionViewLayout.minimumLineSpacing = 0
+        collectionViewLayout.minimumInteritemSpacing = 0
+        return collectionViewLayout
+    }()
+    
+    private lazy var sizeCalculator: CollectionViewCellSizeCalculator = {
+        return .init()
+    }()
+    
     public let presenter: BookmarkViewOutput
     public init(presenter: BookmarkViewOutput) {
         self.presenter = presenter
@@ -38,17 +68,31 @@ public final class BookmarkViewController: UIViewController, TransitionView {
     }
 
     private func setupContent() {
-        view.addSubview(tableView)
+        title = presenter.title
+        
+        view.addSubview(collectionView)
+        refreshControl.isRefreshingPublisher
+            .filter({ $0 })
+            .sink(receiveValue: { [weak self] (isRefreshing) in
+                self?.isRefreshing = true
+                self?.presenter.reloadData()
+            })
+            .store(in: &cancelable)
     }
 
     private func setupLayout() {
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        collectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
     }
 
+    public override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        collectionViewLayout.invalidateLayout()
+    }
+    
 }
 
 // MARK: - BookmarkViewInput
@@ -60,49 +104,46 @@ extension BookmarkViewController: BookmarkViewInput {
 // MARK: - BookmarkPresenterOutput
 
 extension BookmarkViewController: BookmarkPresenterOutput {
+    
+    public func finishLoading() {
+        guard isRefreshing else { return }
+        isRefreshing = false
+        refreshControl.endRefreshing()
+    }
+
     public func setupInitialState() {
         setupContent()
         setupLayout()
 
-        presenter.requestBookmark()
-            .subscribe(manager.memoryStorage.recive())
+        manager.registerNibless(ItemCollectionViewCell.self)
+        manager.didSelect(ItemCollectionViewCell.self, { (_, model, indexPath) in
+            print(model)
+            print(indexPath)
+        })
 
-        manager.register(TableViewCell.self)
-        manager.didSelect(TableViewCell.self, { [weak self] (_, model, _) in
-            self?.presenter.didSelect(model: model)
+        presenter.requestBookmark()
+            .subscribe(manager.memoryStorage.setItems())
+
+        DispatchQueue.global(qos: .background).asyncAfter(deadline: .now() + 1, execute: { [weak self] in
+            self?.presenter.requestNextPage()
+        })
+        manager.sizeForCell(withItem: Bookmark.Item.self, { [weak self] (_, _) -> CGSize in
+            guard let self = self else { return .zero }
+            return self.sizeCalculator.size(for: self.collectionView)
+        })
+
+        manager.willDisplay(ItemCollectionViewCell.self, { [weak self] (_, _, indexPath) in
+            guard let self = self else { return }
+            let totalNumberOfItems = self.manager.memoryStorage.totalNumberOfItems
+            if indexPath.row == totalNumberOfItems - 1 {
+                self.presenter.requestNextPage()
+            }
         })
     }
-
 }
 
-extension BookmarkViewController: DTTableViewManageable {
-    public var tableView: UITableView! {
-        return _tableView
-    }
-}
-
-extension BookmarkViewController: UITableViewDelegate {
-
-    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 35
-    }
-
-    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-}
-
-extension BookmarkViewController {
-    public final class TableViewCell: UITableViewCell, ModelTransfer {
-        public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-            super.init(style: UITableViewCell.CellStyle.value1, reuseIdentifier: reuseIdentifier)
-            self.accessoryType = .disclosureIndicator
-        }
-
-        public required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
-
-        public func update(with model: Bookmark.Item) {
-            self.textLabel?.text = model.title
-        }
+extension BookmarkViewController: DTCollectionViewManageable {
+    public var collectionView: UICollectionView! {
+        return _collectionView
     }
 }

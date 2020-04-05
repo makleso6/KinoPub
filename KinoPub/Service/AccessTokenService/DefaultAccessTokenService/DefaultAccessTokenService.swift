@@ -14,17 +14,17 @@ public extension Key where Value: Token {
 
 public final class DefaultAccessTokenService: AccessTokenService {
 
-    private let keyValueStorage: KeyValueStorage
-    public init(keyValueStorage: KeyValueStorage) {
+    private let keyValueStorage: KeyValueStorageFactory
+    public init(keyValueStorage: KeyValueStorageFactory) {
         self.keyValueStorage = keyValueStorage
     }
 
     public func set<T>(token: T) where T: Token {
-        self.keyValueStorage.setObject(token, for: .token)
+        keyValueStorage.lazyKeyValueStorage.setObject(token, for: .token)
     }
 
     public func token<T>() -> T? where T: Token {
-        keyValueStorage.object(for: .token)
+        keyValueStorage.lazyKeyValueStorage.object(for: .token)
     }
 
 }

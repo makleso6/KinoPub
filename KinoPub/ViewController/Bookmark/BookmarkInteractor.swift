@@ -10,9 +10,15 @@
 
 import Combine
 
+public enum BookmarkInteractorError: Error {
+    case reachedLimitPages
+}
+
 public final class BookmarkInteractor {
     public weak var output: BookmarkInteractorOutput?
 
+    private var totalPages: Int?
+    private var items: [Bookmark.Item] = .init()
     private let networkService: NetworkServiceFactory
     public init(networkService: NetworkServiceFactory) {
         self.networkService = networkService
@@ -22,12 +28,26 @@ public final class BookmarkInteractor {
 // MARK: - BookmarkInteractorInput
 
 extension BookmarkInteractor: BookmarkInteractorInput {
-    public func requestBookmark(model: Bookmark) -> AnyPublisher<[Bookmark.Item], Never> {
+    public func prepareToReloadData() {
+        items = .init()
+    }
+    
+    public func requestBookmark(id: Int, page: Int) -> AnyPublisher<[Bookmark.Item], Error> {
+        if let totalPages = totalPages {
+            guard page <= totalPages else { return Fail(error: BookmarkInteractorError.reachedLimitPages).eraseToAnyPublisher() }
+        }
         return networkService.lazyNetworkService
-            .execute(BookmarkRequest(id: model.id))
+            .execute(BookmarkRequest(id: id, page: page))
+            .handleEvents(receiveOutput: { [weak self] (response) in
+                guard let self = self else { return }
+                self.totalPages = response.pagination.total
+            })
+            .catch({ _ in Empty() })
             .map({ $0.items })
-            .catch({ (_) -> Empty<[Bookmark.Item], Never> in
-                return Empty()
+            .map({ [weak self] (new) -> [Bookmark.Item] in
+                guard let self = self else { return [] }
+                self.items.append(contentsOf: new)
+                return Array(self.items)
             })
             .eraseToAnyPublisher()
     }
@@ -35,5 +55,4 @@ extension BookmarkInteractor: BookmarkInteractorInput {
     public func interact() {
 
     }
-
 }

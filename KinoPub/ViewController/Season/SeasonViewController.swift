@@ -71,7 +71,7 @@ extension SeasonViewController: SeasonPresenterOutput {
         setupContent()
         setupLayout()
         presenter.requestEpisodes()
-            .subscribe(manager.memoryStorage.recive())
+            .subscribe(manager.memoryStorage.setItems())
 
         manager.register(TableViewCell.self)
         manager.didSelect(TableViewCell.self, {  (_, _, _) in

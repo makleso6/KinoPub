@@ -10,12 +10,13 @@ import UIKit
 
 public class AuthorizationModuleFactory {
     public var viewController: UIViewController {
-        let keyValueStorage = ServiceLocator.shared.keyChainStorage
-        let accessTokenService = DefaultAccessTokenServiceFactory(keyValueStorage: keyValueStorage).lazyAccessTokenService
-        let networkService = MoyaNetworkServiceFactory(accessTokenService: accessTokenService).lazyNetworkService
-        let authorizationService = DefaultAuthorizationServiceFactory(networkService: networkService).lazyAuthorizationService
-        let model = AuthorizationViewModel(accessTokenService: accessTokenService,
-                                           authorizationService: authorizationService)
+        let keyValueStorage = KeyChainStorageFactory()
+        let accessTokenService = DefaultAccessTokenServiceFactory(keyValueStorage: keyValueStorage)
+        let networkService = MoyaNetworkServiceFactory(accessTokenService: accessTokenService)
+        let authorizationService = DefaultAuthorizationServiceFactory(networkService: networkService,
+                                                                      accessTokenService: accessTokenService)
+        let model = AuthorizationViewModel(accessTokenService: accessTokenService.lazyAccessTokenService,
+                                           authorizationService: authorizationService.lazyAuthorizationService)
         let viewController = AuthorizationViewController(model: model)
         return viewController
     }

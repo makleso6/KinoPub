@@ -9,13 +9,13 @@
 import Foundation
 
 public final class CachableNetworkServiceFactory: NetworkServiceFactory {
-    private let underluing: CachableNetworkServiceFactory
+    private let underluing: NetworkServiceFactory
 
     public lazy var lazyNetworkService: CombineNetworkService = {
         return CachableNetworkService(underluing: underluing.lazyNetworkService)
     }()
 
-    public init(underluing: CachableNetworkServiceFactory) {
+    public init(underluing: NetworkServiceFactory) {
         self.underluing = underluing
     }
 }

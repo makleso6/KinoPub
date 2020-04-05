@@ -11,8 +11,8 @@ import Foundation
 
 public struct TokenPlugin: PluginType {
 
-    private let accessTokenService: AccessTokenService
-    public init(accessTokenService: AccessTokenService) {
+    private let accessTokenService: AccessTokenServiceFactory
+    public init(accessTokenService: AccessTokenServiceFactory) {
         self.accessTokenService = accessTokenService
     }
 
@@ -23,7 +23,7 @@ public struct TokenPlugin: PluginType {
             else { return request }
 
         var request = request
-        let token: AccessToken? = accessTokenService.token()
+        let token: AccessToken? = accessTokenService.lazyAccessTokenService.token()
         guard let value = token?.accessToken else { return request }
         let authValue = authorizationType.value + " " + value
         request.addValue(authValue, forHTTPHeaderField: "Authorization")

@@ -65,7 +65,7 @@ extension ItemViewController: ItemPresenterOutput {
 
         presenter.requestItem()
             .compactMap({ $0.seasons })
-            .subscribe(manager.memoryStorage.recive())
+            .subscribe(manager.memoryStorage.setItems())
 
         manager.register(TableViewCell.self)
         manager.register(SeasonTableViewCell.self)

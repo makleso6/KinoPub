@@ -21,6 +21,8 @@ public final class BookmarksViewController: UIViewController, TransitionView {
     fileprivate lazy var _tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.delegate = self
+        tableView.sectionHeaderHeight = 35
+        tableView.estimatedSectionHeaderHeight = 35
         return tableView
     }()
 
@@ -36,6 +38,8 @@ public final class BookmarksViewController: UIViewController, TransitionView {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.prefersLargeTitles = true
+
         presenter.didTriggerViewReadyEvent()
     }
 
@@ -67,10 +71,11 @@ extension BookmarksViewController: BookmarksPresenterOutput {
         setupLayout()
 
         presenter.requestBookmarks()
-            .subscribe(manager.memoryStorage.recive())
+            .subscribe(manager.memoryStorage.setItems())
 
         manager.register(TableViewCell.self)
-        manager.didSelect(TableViewCell.self, { [weak self] (_, model, _) in
+        manager.didSelect(TableViewCell.self, { [weak self] (_, model, indexPath) in
+            self?._tableView.deselectRow(at: indexPath, animated: true)
             self?.presenter.didSelect(model: model)
         })
     }
@@ -89,9 +94,6 @@ extension BookmarksViewController: UITableViewDelegate {
         return 35
     }
 
-    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
 }
 
 extension BookmarksViewController {

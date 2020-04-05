@@ -28,6 +28,8 @@ public final class AuthorizationViewController: UIHostingController<Authorizatio
 //                self?.present(newVC, animated: true, completion: nil)
             })
             .store(in: &dispose)
+        self.isModalInPresentation = true
+
     }
 
     @objc public required dynamic init?(coder aDecoder: NSCoder) {

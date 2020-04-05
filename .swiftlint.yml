@@ -13,9 +13,10 @@ disabled_rules:
   - todo
   - type_body_length
   - line_length
-  - vertical_whitespace
+  # - vertical_whitespace
   - syntactic_sugar
   - nesting
+  - trailing_whitespace
 
 enabled_rules:
   - explicit_top_level_acl
@@ -88,7 +89,6 @@ enabled_rules:
   - redundant_optional_initialization
 
   - trailing_newline
-  - trailing_whitespace
 
   - unused_closure_parameter
   - unused_optional_binding
